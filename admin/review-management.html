@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Review Management</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="sidebar.css"/>
+  <link rel="stylesheet" href="maincontent.css"/>
+  <link rel="stylesheet" href="tables.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="logo-circle">Logo</div>
+    <nav class="main-menu">
+      <a href="#" class="logout">Logout</a>
+    </nav>
+    <div class="user-info" id="userInfo">
+      <span id="userDisplay"></span>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="matrimony-name">Matrimony Name</div>
+      <ul class="sidebar-menu">
+        <li><a href="members.html" class="sidebar-link active">Manage members</a></li>
+        <li><a href="call-management.html" class="sidebar-link">Call management</a></li>
+        <li><a href="user-message-management.html" class="sidebar-link">User message management</a></li>
+        <li><a href="review-management.html" class="sidebar-link">Review management</a></li>
+        <li><a href="transaction-management.html" class="sidebar-link">Transaction management</a></li>
+        <li><a href="packages-management.html" class="sidebar-link">Packages management</a></li>
+        <li><a href="blog-management.html" class="sidebar-link">Blog management</a></li>
+        <li><a href="total-earnings.html" class="sidebar-link">Total earnings</a></li>
+        <li><a id="staffLink" href="staff.html" class="sidebar-link">Staff management</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search member"/>
+      </div>
+
+      <!-- Review Statistics -->
+      <div class="content-section">
+        <h2>Review Statistics</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Total Reviews</h3>
+              <p class="stat-number">1,247</p>
+              <span class="stat-change positive">
+                <i class="fas fa-arrow-up"></i>
+                12.5%
+              </span>
+            </div>
+          </div>
+          
+
+          
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Average Rating</h3>
+              <p class="stat-number">4.2</p>
+              <span class="stat-change positive">
+                <i class="fas fa-arrow-up"></i>
+                0.3
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Review Table -->
+      <div class="content-section">
+        <h2>Review Table</h2>
+        <p class="section-description">After the action the review is show in the website</p>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>member name</th>
+              <th>Review date and time</th>
+              <th>Review (popup)</th>
+              <th>star rating</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>John Doe</td>
+              <td>2024-06-01 10:00</td>
+              <td><button class="popup-btn">View</button></td>
+              <td>
+                <div class="star-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Jane Smith</td>
+              <td>2024-06-01 09:30</td>
+              <td><button class="popup-btn">View</button></td>
+              <td>
+                <div class="star-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Mike Johnson</td>
+              <td>2024-06-01 08:45</td>
+              <td><button class="popup-btn">View</button></td>
+              <td>
+                <div class="star-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                  <i class="far fa-star"></i>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Sarah Wilson</td>
+              <td>2024-05-31 15:20</td>
+              <td><button class="popup-btn">View</button></td>
+              <td>
+                <div class="star-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      
+    </main>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Check authentication on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const userType = localStorage.getItem('userType');
+      const username = localStorage.getItem('username');
+      
+      if (!isLoggedIn) {
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      // Display user info
+      if (username && userType) {
+        console.log(`Welcome ${username} (${userType})`);
+        const userDisplay = document.getElementById('userDisplay');
+        if (userDisplay) {
+          userDisplay.textContent = `${userType.toUpperCase()}`;
+        }
+      }
+      
+      // Force update user info
+      forceUpdateUserInfo();
+
+      const staffLink = document.getElementById('staffLink');
+      if (staffLink && userType !== 'admin') {
+        staffLink.style.display = 'none';
+      }
+    });
+    
+
+  </script>
+</body>
+</html> 

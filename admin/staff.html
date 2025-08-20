@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Staff - Admin Panel</title>
+  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="sidebar.css"/>
+  <link rel="stylesheet" href="maincontent.css"/>
+  <link rel="stylesheet" href="tables.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="logo-circle">Logo</div>
+    <nav class="main-menu">
+      <a href="#" class="logout">Logout</a>
+    </nav>
+  </header>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="matrimony-name">Matrimony Name</div>
+      <ul class="sidebar-menu">
+        <li><a href="members.html" class="sidebar-link active">Manage members</a></li>
+        <li><a href="call-management.html" class="sidebar-link">Call management</a></li>
+        <li><a href="user-message-management.html" class="sidebar-link">User message management</a></li>
+        <li><a href="review-management.html" class="sidebar-link">Review management</a></li>
+        <li><a href="transaction-management.html" class="sidebar-link">Transaction management</a></li>
+        <li><a href="packages-management.html" class="sidebar-link">Packages management</a></li>
+        <li><a href="blog-management.html" class="sidebar-link">Blog management</a></li>
+        <li><a href="total-earnings.html" class="sidebar-link">Total earnings</a></li>
+        <li><a id="staffLink" href="staff.html" class="sidebar-link">Staff management</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="content-section">
+        <div class="top-actions">
+          <button class="action-btn">Manager details</button>
+          <button class="action-btn">Staff details</button>
+        </div>
+        <form class="staff-form">
+          <input type="text" placeholder="Employee name"/>
+          <input type="text" placeholder="Age"/>
+          <input type="text" placeholder="Gender"/>
+          <input type="text" placeholder="Address"/>
+          <input type="text" placeholder="Position"/>
+          <button class="action-btn" type="submit">Submit</button>
+        </form>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Employee</th>
+              <th>Position</th>
+              <th>Which part can see staff in admin section</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- rows here -->
+          </tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Force update user info on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      forceUpdateUserInfo();
+    });
+  </script>
+</body>
+</html> 

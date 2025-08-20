@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog Management</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="sidebar.css"/>
+  <link rel="stylesheet" href="maincontent.css"/>
+  <link rel="stylesheet" href="tables.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="logo-circle">Logo</div>
+    <nav class="main-menu">
+      <a href="#" class="logout">Logout</a>
+    </nav>
+    <div class="user-info" id="userInfo">
+      <span id="userDisplay"></span>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="matrimony-name">Matrimony Name</div>
+      <ul class="sidebar-menu">
+        <li><a href="members.html" class="sidebar-link active">Manage members</a></li>
+        <li><a href="call-management.html" class="sidebar-link">Call management</a></li>
+        <li><a href="user-message-management.html" class="sidebar-link">User message management</a></li>
+        <li><a href="review-management.html" class="sidebar-link">Review management</a></li>
+        <li><a href="transaction-management.html" class="sidebar-link">Transaction management</a></li>
+        <li><a href="packages-management.html" class="sidebar-link">Packages management</a></li>
+        <li><a href="blog-management.html" class="sidebar-link">Blog management</a></li>
+        <li><a href="total-earnings.html" class="sidebar-link">Total earnings</a></li>
+        <li><a id="staffLink" href="staff.html" class="sidebar-link">Staff management</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Action Buttons -->
+      <div class="top-actions">
+        <button id="addBlogBtn" class="action-btn">
+          <i class="fas fa-plus"></i>
+          Add New Blog
+        </button>
+        <button class="action-btn secondary">
+          <i class="fas fa-download"></i>
+          Export Blogs
+        </button>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search blogs"/>
+      </div>
+
+      <!-- Blog Statistics -->
+      <div class="content-section">
+        <h2>Blog Overview</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-blog"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Total Blogs</h3>
+              <p class="stat-number">156</p>
+              <span class="stat-change positive">
+                <i class="fas fa-arrow-up"></i>
+                8 new
+              </span>
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+
+      <!-- Blog Table -->
+      <div class="content-section">
+        <h2>Blog Posts</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Blog Title</th>
+              <th>Author</th>
+              <th>Category</th>
+              <th>Publish Date</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#BLG001</td>
+              <td>
+                <div class="blog-info">
+                  <span class="blog-title">10 Tips for a Successful First Date</span>
+                  <span class="blog-excerpt">Essential advice to make your first meeting memorable and meaningful...</span>
+                </div>
+              </td>
+              <td>
+                <div class="author-info">
+                  <span class="author-name">Sarah Johnson</span>
+                  <span class="author-role">Relationship Expert</span>
+                </div>
+              </td>
+              <td>
+                <span class="category-badge dating">Dating Tips</span>
+              </td>
+              <td>2024-06-01</td>
+              <td>
+                <span class="status-badge success">Published</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="view-btn" title="View Blog">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="edit-btn" title="Edit Blog">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Blog">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#BLG002</td>
+              <td>
+                <div class="blog-info">
+                  <span class="blog-title">Building Trust in Relationships</span>
+                  <span class="blog-excerpt">Learn the fundamental principles of trust and how to strengthen your bond...</span>
+                </div>
+              </td>
+              <td>
+                <div class="author-info">
+                  <span class="author-name">Dr. Michael Chen</span>
+                  <span class="author-role">Psychologist</span>
+                </div>
+              </td>
+              <td>
+                <span class="category-badge relationship">Relationships</span>
+              </td>
+              <td>2024-05-30</td>
+              <td>
+                <span class="status-badge success">Published</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="view-btn" title="View Blog">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="edit-btn" title="Edit Blog">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Blog">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#BLG003</td>
+              <td>
+                <div class="blog-info">
+                  <span class="blog-title">Modern Wedding Traditions</span>
+                  <span class="blog-excerpt">Discover contemporary approaches to traditional wedding customs...</span>
+                </div>
+              </td>
+              <td>
+                <div class="author-info">
+                  <span class="author-name">Emma Rodriguez</span>
+                  <span class="author-role">Wedding Planner</span>
+                </div>
+              </td>
+              <td>
+                <span class="category-badge wedding">Wedding</span>
+              </td>
+              <td>2024-05-29</td>
+              <td>
+                <span class="status-badge pending">Draft</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="view-btn" title="View Blog">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="edit-btn" title="Edit Blog">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Blog">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#BLG004</td>
+              <td>
+                <div class="blog-info">
+                  <span class="blog-title">Communication Skills for Couples</span>
+                  <span class="blog-excerpt">Improve your relationship through better communication techniques...</span>
+                </div>
+              </td>
+              <td>
+                <div class="author-info">
+                  <span class="author-name">Lisa Thompson</span>
+                  <span class="author-role">Marriage Counselor</span>
+                </div>
+              </td>
+              <td>
+                <span class="category-badge communication">Communication</span>
+              </td>
+              <td>2024-05-28</td>
+              <td>
+                <span class="status-badge success">Published</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="view-btn" title="View Blog">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="edit-btn" title="Edit Blog">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Blog">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#BLG005</td>
+              <td>
+                <div class="blog-info">
+                  <span class="blog-title">Online Dating Safety Guide</span>
+                  <span class="blog-excerpt">Stay safe while finding love in the digital age with these essential tips...</span>
+                </div>
+              </td>
+              <td>
+                <div class="author-info">
+                  <span class="author-name">David Wilson</span>
+                  <span class="author-role">Security Expert</span>
+                </div>
+              </td>
+              <td>
+                <span class="category-badge safety">Safety</span>
+              </td>
+              <td>2024-05-27</td>
+              <td>
+                <span class="status-badge failed">Archived</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="view-btn" title="View Blog">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="edit-btn" title="Edit Blog">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Blog">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Blog Filters -->
+      <div class="content-section">
+        <h2>Filter Blogs</h2>
+        <div class="filter-form">
+          <div class="form-row">
+            <div class="form-column">
+              <div class="form-group">
+                <label>Category</label>
+                <select>
+                  <option value="all">All Categories</option>
+                  <option value="dating">Dating Tips</option>
+                  <option value="relationship">Relationships</option>
+                  <option value="wedding">Wedding</option>
+                  <option value="communication">Communication</option>
+                  <option value="safety">Safety</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-column">
+              <div class="form-group">
+                <label>Status</label>
+                <select>
+                  <option value="all">All Status</option>
+                  <option value="published">Published</option>
+                  <option value="draft">Draft</option>
+                  <option value="archived">Archived</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-column">
+              <div class="form-group">
+                <label>Date Range</label>
+                <select>
+                  <option value="all">All Time</option>
+                  <option value="today">Today</option>
+                  <option value="week">This Week</option>
+                  <option value="month">This Month</option>
+                  <option value="quarter">This Quarter</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="action-btn">Apply Filters</button>
+            <button type="button" class="action-btn secondary">Clear Filters</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Add Blog Modal -->
+      <div id="addBlogModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2><i class="fas fa-blog"></i> Add New Blog</h2>
+            <span class="close" id="closeAddBlogModal">&times;</span>
+          </div>
+          <div class="modal-body">
+            <form id="addBlogForm">
+              <!-- Row 1: ID, Blog Title, Author -->
+              <div class="form-row">
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="blogId">ID</label>
+                    <input id="blogId" name="id" type="text" placeholder="e.g., BLG156" required autofocus />
+                  </div>
+                </div>
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="blogTitle">Blog Title</label>
+                    <input id="blogTitle" name="title" type="text" placeholder="Enter blog title" required />
+                  </div>
+                </div>
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="blogAuthor">Author</label>
+                    <input id="blogAuthor" name="author" type="text" placeholder="Author name" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 2: Category, Publish Date, Status -->
+              <div class="form-row">
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="blogCategory">Category</label>
+                    <select id="blogCategory" name="category" required>
+                      <option value="">Select category</option>
+                      <option value="Dating Tips">Dating Tips</option>
+                      <option value="Relationships">Relationships</option>
+                      <option value="Wedding">Wedding</option>
+                      <option value="Communication">Communication</option>
+                      <option value="Safety">Safety</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="publishDate">Publish Date</label>
+                    <input id="publishDate" name="publishDate" type="date" required />
+                  </div>
+                </div>
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="blogStatus">Status</label>
+                    <select id="blogStatus" name="status" required>
+                      <option value="published">Published</option>
+                      <option value="draft">Draft</option>
+                      <option value="archived">Archived</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Save Blog</button>
+                <button type="button" id="cancelAddBlog" class="btn-secondary">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Check authentication on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const userType = localStorage.getItem('userType');
+      const username = localStorage.getItem('username');
+      
+      if (!isLoggedIn) {
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      // Display user info
+      if (username && userType) {
+        console.log(`Welcome ${username} (${userType})`);
+        const userDisplay = document.getElementById('userDisplay');
+        if (userDisplay) {
+          userDisplay.textContent = `${userType.toUpperCase()}`;
+        }
+      }
+      
+      // Force update user info
+      forceUpdateUserInfo();
+
+      const staffLink = document.getElementById('staffLink');
+      if (staffLink && userType !== 'admin') {
+        staffLink.style.display = 'none';
+      }
+
+      // Add Blog modal logic
+      const addBlogBtn = document.getElementById('addBlogBtn');
+      const addBlogModal = document.getElementById('addBlogModal');
+      const closeAddBlogModal = document.getElementById('closeAddBlogModal');
+      const cancelAddBlog = document.getElementById('cancelAddBlog');
+      const addBlogForm = document.getElementById('addBlogForm');
+
+      if (addBlogBtn && addBlogModal) {
+        addBlogBtn.addEventListener('click', () => {
+          addBlogModal.style.display = 'block';
+        });
+      }
+
+      if (closeAddBlogModal) {
+        closeAddBlogModal.addEventListener('click', () => {
+          addBlogModal.style.display = 'none';
+        });
+      }
+
+      if (cancelAddBlog) {
+        cancelAddBlog.addEventListener('click', () => {
+          addBlogModal.style.display = 'none';
+        });
+      }
+
+      window.addEventListener('click', (e) => {
+        if (e.target === addBlogModal) {
+          addBlogModal.style.display = 'none';
+        }
+      });
+
+      if (addBlogForm) {
+        addBlogForm.addEventListener('submit', () => {
+          // Close the modal after global form handler runs
+          addBlogModal.style.display = 'none';
+        });
+      }
+    });
+    
+
+  </script>
+</body>
+</html> 

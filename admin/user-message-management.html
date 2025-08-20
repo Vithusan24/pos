@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Message Management</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="sidebar.css"/>
+  <link rel="stylesheet" href="maincontent.css"/>
+  <link rel="stylesheet" href="tables.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="logo-circle">Logo</div>
+    <nav class="main-menu">
+      <a href="#" class="logout">Logout</a>
+    </nav>
+    <div class="user-info" id="userInfo">
+      <span id="userDisplay"></span>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="matrimony-name">Matrimony Name</div>
+      <ul class="sidebar-menu">
+        <li><a href="members.html" class="sidebar-link active">Manage members</a></li>
+        <li><a href="call-management.html" class="sidebar-link">Call management</a></li>
+        <li><a href="user-message-management.html" class="sidebar-link">User message management</a></li>
+        <li><a href="review-management.html" class="sidebar-link">Review management</a></li>
+        <li><a href="transaction-management.html" class="sidebar-link">Transaction management</a></li>
+        <li><a href="packages-management.html" class="sidebar-link">Packages management</a></li>
+        <li><a href="blog-management.html" class="sidebar-link">Blog management</a></li>
+        <li><a href="total-earnings.html" class="sidebar-link">Total earnings</a></li>
+        <li><a id="staffLink" href="staff.html" class="sidebar-link">Staff management</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search messages"/>
+      </div>
+
+      <!-- Message Form -->
+      <div class="content-section">
+        <h2>Send Message</h2>
+        <form class="message-form">
+          <div class="form-row">
+            <div class="form-column">
+              <div class="form-group">
+                <label>From (Sender)</label>
+                <input type="text" placeholder="Enter sender name"/>
+              </div>
+              <div class="form-group">
+                <label>To (Recipient)</label>
+                <input type="text" placeholder="Enter recipient name"/>
+              </div>
+            </div>
+            <div class="form-column">
+              <div class="form-group">
+                <label>Subject</label>
+                <input type="text" placeholder="Enter message subject"/>
+              </div>
+              <div class="form-group">
+                <label>Priority</label>
+                <select>
+                  <option value="low">Low</option>
+                  <option value="medium">Medium</option>
+                  <option value="high">High</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Message Content</label>
+            <textarea placeholder="Enter your message here..." rows="6"></textarea>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="action-btn">Send Message</button>
+            <button type="button" class="action-btn secondary">Save Draft</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Message History Table -->
+      <div class="content-section">
+        <h2>Message History</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>id</th>
+              <th>sender</th>
+              <th>recipient</th>
+              <th>subject</th>
+              <th>message (popup)</th>
+              <th>date/time</th>
+              <th>actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>John Doe</td>
+              <td>Jane Smith</td>
+              <td>Welcome Message</td>
+              <td><button class="popup-btn">View</button></td>
+              <td>2024-06-01 10:30</td>
+              <td>
+                <button class="reply-btn">Reply</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Admin</td>
+              <td>All Members</td>
+              <td>System Update</td>
+              <td><button class="popup-btn">View</button></td>
+              <td>2024-06-01 09:15</td>
+              <td>
+                <button class="reply-btn">Reply</button>
+                <button class="delete-btn">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Inbox/Outbox Tabs -->
+      <div class="content-section">
+        <div class="tab-buttons">
+          <button class="tab-btn active">Inbox</button>
+          <button class="tab-btn">Outbox</button>
+          <button class="tab-btn">Drafts</button>
+        </div>
+        <div class="message-list">
+          <!-- Message items will be displayed here -->
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Check authentication on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const userType = localStorage.getItem('userType');
+      const username = localStorage.getItem('username');
+      
+      if (!isLoggedIn) {
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      // Display user info
+      if (username && userType) {
+        console.log(`Welcome ${username} (${userType})`);
+        const userDisplay = document.getElementById('userDisplay');
+        if (userDisplay) {
+          userDisplay.textContent = `${userType.toUpperCase()}`;
+        }
+      }
+      
+      // Force update user info
+      forceUpdateUserInfo();
+
+      const staffLink = document.getElementById('staffLink');
+      if (staffLink && userType !== 'admin') {
+        staffLink.style.display = 'none';
+      }
+    });
+    
+
+  </script>
+</body>
+</html> 

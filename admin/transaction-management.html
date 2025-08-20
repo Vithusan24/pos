@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Transaction Management</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="sidebar.css"/>
+  <link rel="stylesheet" href="maincontent.css"/>
+  <link rel="stylesheet" href="tables.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="logo-circle">Logo</div>
+    <nav class="main-menu">
+      <a href="#" class="logout">Logout</a>
+    </nav>
+    <div class="user-info" id="userInfo">
+      <span id="userDisplay"></span>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="matrimony-name">Matrimony Name</div>
+      <ul class="sidebar-menu">
+        <li><a href="members.html" class="sidebar-link active">Manage members</a></li>
+        <li><a href="call-management.html" class="sidebar-link">Call management</a></li>
+        <li><a href="user-message-management.html" class="sidebar-link">User message management</a></li>
+        <li><a href="review-management.html" class="sidebar-link">Review management</a></li>
+        <li><a href="transaction-management.html" class="sidebar-link">Transaction management</a></li>
+        <li><a href="packages-management.html" class="sidebar-link">Packages management</a></li>
+        <li><a href="blog-management.html" class="sidebar-link">Blog management</a></li>
+        <li><a href="total-earnings.html" class="sidebar-link">Total earnings</a></li>
+        <li><a id="staffLink" href="staff.html" class="sidebar-link">Staff management</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Action Buttons -->
+      <div class="top-actions">
+        <button class="action-btn" id="newTransactionBtn">
+          <i class="fas fa-plus"></i>
+          New Transaction
+        </button>
+        <button class="action-btn secondary">
+          <i class="fas fa-download"></i>
+          Export Data
+        </button>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search transactions"/>
+      </div>
+
+      <!-- Transaction Statistics -->
+      <div class="content-section">
+        <h2>Transaction Overview</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-credit-card"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Total Transactions</h3>
+              <p class="stat-number">1,234</p>
+              <span class="stat-change positive">
+                <i class="fas fa-arrow-up"></i>
+                8.7%
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Transaction Table -->
+      <div class="content-section">
+        <h2>Transaction History</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Member Name</th>
+              <th>Transaction Date</th>
+              <th>Amount</th>
+              <!-- <th>Payment Method</th> -->
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#TXN001</td>
+              <td>John Doe</td>
+              <td>2024-06-01 14:30</td>
+              <td class="amount">$299.00</td>
+              <!-- <td>
+                <span class="payment-method">
+                  <i class="fab fa-cc-visa"></i>
+                  Visa ****1234
+                </span>
+              </td> -->
+              <td>
+                <span class="status-badge success">Completed</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="view-btn" title="View Details">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Transaction">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#TXN002</td>
+              <td>Jane Smith</td>
+              <td>2024-06-01 13:45</td>
+              <td class="amount">$199.00</td>
+              <!-- <td>
+                <span class="payment-method">
+                  <i class="fab fa-cc-mastercard"></i>
+                  Mastercard ****5678
+                </span>
+              </td> -->
+              <td>
+                <span class="status-badge success">Completed</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="view-btn" title="View Details">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Transaction">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#TXN003</td>
+              <td>Mike Johnson</td>
+              <td>2024-06-01 12:20</td>
+              <td class="amount">$399.00</td>
+              <!-- <td>
+                <span class="payment-method">
+                  <i class="fab fa-cc-mastercard"></i>
+                  Mastercard ****5678
+                </span>
+              </td> -->
+              <td>
+                <span class="status-badge pending">Pending</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="view-btn" title="View Details">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Transaction">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#TXN004</td>
+              <td>Sarah Wilson</td>
+              <td>2024-06-01 11:15</td>
+              <td class="amount">$149.00</td>
+              <!-- <td>
+                <span class="payment-method">
+                  <i class="fab fa-cc-visa"></i>
+                  Visa ****9012
+                </span>
+              </td> -->
+              <td>
+                <span class="status-badge failed">Failed</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="view-btn" title="View Details">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Transaction">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#TXN005</td>
+              <td>David Brown</td>
+              <td>2024-06-01 10:30</td>
+              <td class="amount">$249.00</td>
+              <!-- <td>
+                <span class="payment-method">
+                  <i class="fab fa-cc-mastercard"></i>
+                  Mastercard ****3456
+                </span>
+              </td> -->
+              <td>
+                <span class="status-badge success">Completed</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="view-btn" title="View Details">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Transaction">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Transaction Filters -->
+      <div class="content-section">
+        <h2>Filter Transactions</h2>
+        <div class="filter-form">
+          <div class="form-row">
+            <div class="form-column">
+              <div class="form-group">
+                <label>Date Range</label>
+                <select>
+                  <option value="today">Today</option>
+                  <option value="week">This Week</option>
+                  <option value="month">This Month</option>
+                  <option value="quarter">This Quarter</option>
+                  <option value="year">This Year</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-column">
+              <div class="form-group">
+                <label>Status</label>
+                <select>
+                  <option value="all">All Status</option>
+                  <option value="completed">Completed</option>
+                  <option value="pending">Pending</option>
+                  <option value="failed">Failed</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-column">
+              <div class="form-group">
+                <label>Payment Method</label>
+                <select>
+                  <option value="all">All Methods</option>
+                  <option value="visa">Visa</option>
+                  <option value="mastercard">Mastercard</option>
+                  <option value="paypal">PayPal</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="action-btn">Apply Filters</button>
+            <button type="button" class="action-btn secondary">Clear Filters</button>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Add Transaction Modal -->
+      <div id="addTransactionModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2><i class="fas fa-plus"></i> Add New Transaction</h2>
+            <span class="close" id="closeAddTransactionModal">&times;</span>
+          </div>
+          <div class="modal-body">
+            <form id="addTransactionForm">
+              <!-- Row 1: ID, Member Name -->
+              <div class="form-row">
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="transactionId">ID</label>
+                    <input id="transactionId" name="id" type="text" placeholder="e.g., TXN006" required autofocus />
+                  </div>
+                </div>
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="memberName">Member Name</label>
+                    <input id="memberName" name="memberName" type="text" placeholder="Enter member name" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 2: Transaction Date, Amount -->
+              <div class="form-row">
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="transactionDate">Transaction Date</label>
+                    <input id="transactionDate" name="transactionDate" type="datetime-local" required />
+                  </div>
+                </div>
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="amount">Amount (USD)</label>
+                    <input id="amount" name="amount" type="number" step="0.01" min="0" placeholder="e.g., 299.00" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 3: Status -->
+              <div class="form-row">
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status" name="status" required>
+                      <option value="">Select status</option>
+                      <option value="Completed">Completed</option>
+                      <option value="Pending">Pending</option>
+                      <option value="Failed">Failed</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Save Transaction</button>
+                <button type="button" id="cancelAddTransaction" class="btn-secondary">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="script.js"></script>
+  <script>
+    // Check authentication on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const userType = localStorage.getItem('userType');
+      const username = localStorage.getItem('username');
+      
+      if (!isLoggedIn) {
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      // Display user info
+      if (username && userType) {
+        console.log(`Welcome ${username} (${userType})`);
+        const userDisplay = document.getElementById('userDisplay');
+        if (userDisplay) {
+          userDisplay.textContent = `${userType.toUpperCase()}`;
+        }
+      }
+      
+      // Force update user info
+      forceUpdateUserInfo();
+
+      const staffLink = document.getElementById('staffLink');
+      if (staffLink && userType !== 'admin') {
+        staffLink.style.display = 'none';
+      }
+
+      // Add Transaction modal logic
+      const newTransactionBtn = document.getElementById('newTransactionBtn');
+      const addTransactionModal = document.getElementById('addTransactionModal');
+      const closeAddTransactionModal = document.getElementById('closeAddTransactionModal');
+      const cancelAddTransaction = document.getElementById('cancelAddTransaction');
+      const addTransactionForm = document.getElementById('addTransactionForm');
+
+      if (newTransactionBtn && addTransactionModal) {
+        newTransactionBtn.addEventListener('click', () => {
+          addTransactionModal.style.display = 'block';
+        });
+      }
+
+      if (closeAddTransactionModal) {
+        closeAddTransactionModal.addEventListener('click', () => {
+          addTransactionModal.style.display = 'none';
+        });
+      }
+
+      if (cancelAddTransaction) {
+        cancelAddTransaction.addEventListener('click', () => {
+          addTransactionModal.style.display = 'none';
+        });
+      }
+
+      window.addEventListener('click', (e) => {
+        if (e.target === addTransactionModal) {
+          addTransactionModal.style.display = 'none';
+        }
+      });
+
+      if (addTransactionForm) {
+        addTransactionForm.addEventListener('submit', () => {
+          // Close after global form handler runs
+          addTransactionModal.style.display = 'none';
+        });
+      }
+    });
+    
+
+  </script>
+</body>
+</html> 

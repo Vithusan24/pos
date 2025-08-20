@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Packages Management</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="sidebar.css"/>
+  <link rel="stylesheet" href="maincontent.css"/>
+  <link rel="stylesheet" href="tables.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <header class="top-nav">
+    <div class="logo-circle">Logo</div>
+    <nav class="main-menu">
+      <a href="#" class="logout">Logout</a>
+    </nav>
+    <div class="user-info" id="userInfo">
+      <span id="userDisplay"></span>
+    </div>
+  </header>
+
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="matrimony-name">Matrimony Name</div>
+      <ul class="sidebar-menu">
+        <li><a href="members.html" class="sidebar-link active">Manage members</a></li>
+        <li><a href="call-management.html" class="sidebar-link">Call management</a></li>
+        <li><a href="user-message-management.html" class="sidebar-link">User message management</a></li>
+        <li><a href="review-management.html" class="sidebar-link">Review management</a></li>
+        <li><a href="transaction-management.html" class="sidebar-link">Transaction management</a></li>
+        <li><a href="packages-management.html" class="sidebar-link">Packages management</a></li>
+        <li><a href="blog-management.html" class="sidebar-link">Blog management</a></li>
+        <li><a href="total-earnings.html" class="sidebar-link">Total earnings</a></li>
+        <li><a id="staffLink" href="staff.html" class="sidebar-link">Staff management</a></li>
+      </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Action Buttons -->
+      <div class="top-actions">
+        <button id="addPackageBtn" class="action-btn">
+          <i class="fas fa-plus"></i>
+          Add New Package
+        </button>
+        <button class="action-btn secondary">
+          <i class="fas fa-download"></i>
+          Export Packages
+        </button>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <i class="fas fa-search"></i>
+        <input type="text" placeholder="Search packages"/>
+      </div>
+
+      <!-- Package Statistics -->
+      <div class="content-section">
+        <h2>Package Overview</h2>
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-box"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Total Packages</h3>
+              <p class="stat-number">8</p>
+              <span class="stat-change positive">
+                <i class="fas fa-arrow-up"></i>
+                2 new
+              </span>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-check-circle"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Active Packages</h3>
+              <p class="stat-number">6</p>
+              <span class="stat-change positive">
+                <i class="fas fa-arrow-up"></i>
+                75%
+              </span>
+            </div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-icon">
+              <i class="fas fa-users"></i>
+            </div>
+            <div class="stat-info">
+              <h3>Total Subscribers</h3>
+              <p class="stat-number">1,247</p>
+              <span class="stat-change positive">
+                <i class="fas fa-arrow-up"></i>
+                12.5%
+              </span>
+            </div>
+          </div>
+          
+
+        </div>
+      </div>
+
+      <!-- Packages Table -->
+      <div class="content-section">
+        <h2>Package List</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Package Name</th>
+              <th>Price</th>
+              <th>Duration</th>
+              <th>Features</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#PKG001</td>
+              <td>
+                <div class="package-info">
+                  <span class="package-name">Basic Plan</span>
+                  <span class="package-description">Essential features for new users</span>
+                </div>
+              </td>
+              <td class="package-price">$29.99</td>
+              <td>1 Month</td>
+              <td>
+                <div class="package-features">
+                  <span class="feature-tag">Profile View</span>
+                  <span class="feature-tag">Basic Search</span>
+                  <span class="feature-tag">Limited Messages</span>
+                </div>
+              </td>
+              <td>
+                <span class="status-badge success">Active</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="edit-btn" title="Edit Package">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="hide-btn" title="Hide Package">
+                    <i class="fas fa-eye-slash"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Package">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#PKG002</td>
+              <td>
+                <div class="package-info">
+                  <span class="package-name">Premium Plan</span>
+                  <span class="package-description">Advanced features for serious users</span>
+                </div>
+              </td>
+              <td class="package-price">$79.99</td>
+              <td>3 Months</td>
+              <td>
+                <div class="package-features">
+                  <span class="feature-tag">Unlimited Messages</span>
+                  <span class="feature-tag">Advanced Search</span>
+                  <span class="feature-tag">Profile Boost</span>
+                  <span class="feature-tag">Video Call</span>
+                </div>
+              </td>
+              <td>
+                <span class="status-badge success">Active</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="edit-btn" title="Edit Package">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="hide-btn" title="Hide Package">
+                    <i class="fas fa-eye-slash"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Package">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#PKG003</td>
+              <td>
+                <div class="package-info">
+                  <span class="package-name">Gold Plan</span>
+                  <span class="package-description">Premium features with priority support</span>
+                </div>
+              </td>
+              <td class="package-price">$149.99</td>
+              <td>6 Months</td>
+              <td>
+                <div class="package-features">
+                  <span class="feature-tag">All Premium Features</span>
+                  <span class="feature-tag">Priority Support</span>
+                  <span class="feature-tag">Background Check</span>
+                  <span class="feature-tag">Match Guarantee</span>
+                </div>
+              </td>
+              <td>
+                <span class="status-badge success">Active</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="edit-btn" title="Edit Package">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="hide-btn" title="Hide Package">
+                    <i class="fas fa-eye-slash"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Package">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#PKG004</td>
+              <td>
+                <div class="package-info">
+                  <span class="package-name">Platinum Plan</span>
+                  <span class="package-description">Ultimate package with concierge service</span>
+                </div>
+              </td>
+              <td class="package-price">$299.99</td>
+              <td>12 Months</td>
+              <td>
+                <div class="package-features">
+                  <span class="feature-tag">All Gold Features</span>
+                  <span class="feature-tag">Concierge Service</span>
+                  <span class="feature-tag">Personal Matchmaker</span>
+                  <span class="feature-tag">Luxury Events</span>
+                </div>
+              </td>
+              <td>
+                <span class="status-badge success">Active</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="edit-btn" title="Edit Package">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="hide-btn" title="Hide Package">
+                    <i class="fas fa-eye-slash"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Package">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>#PKG005</td>
+              <td>
+                <div class="package-info">
+                  <span class="package-name">Trial Plan</span>
+                  <span class="package-description">Free trial for new users</span>
+                </div>
+              </td>
+              <td class="package-price">$0.00</td>
+              <td>7 Days</td>
+              <td>
+                <div class="package-features">
+                  <span class="feature-tag">Basic Profile</span>
+                  <span class="feature-tag">Limited Search</span>
+                  <span class="feature-tag">No Messages</span>
+                </div>
+              </td>
+              <td>
+                <span class="status-badge pending">Inactive</span>
+              </td>
+              <td>
+                <div class="action-buttons">
+                  <button class="edit-btn" title="Edit Package">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="hide-btn" title="Hide Package">
+                    <i class="fas fa-eye-slash"></i>
+                  </button>
+                  <button class="delete-btn" title="Delete Package">
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      
+      <!-- Add Package Modal -->
+      <div id="addPackageModal" class="modal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2><i class="fas fa-box"></i> Add New Package</h2>
+            <span class="close" id="closeAddPackageModal">&times;</span>
+          </div>
+          <div class="modal-body">
+            <form id="addPackageForm">
+              <!-- Row 1: ID, Package Name, Price -->
+              <div class="form-row">
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="pkgId">Package ID</label>
+                    <input id="pkgId" name="id" type="text" placeholder="e.g., PKG009" required autofocus />
+                  </div>
+                </div>
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="pkgName">Package Name</label>
+                    <input id="pkgName" name="name" type="text" placeholder="e.g., Premium Plan" required />
+                  </div>
+                </div>
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="pkgPrice">Price (USD)</label>
+                    <input id="pkgPrice" name="price" type="number" step="0.01" min="0" placeholder="e.g., 79.99" required />
+                  </div>
+                </div>
+              </div>
+
+              <!-- Row 2: Duration, Features, Status -->
+              <div class="form-row">
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="pkgDuration">Duration</label>
+                    <select id="pkgDuration" name="duration" required>
+                      <option value="">Select duration</option>
+                      <option value="7 Days">7 Days</option>
+                      <option value="1 Month">1 Month</option>
+                      <option value="3 Months">3 Months</option>
+                      <option value="6 Months">6 Months</option>
+                      <option value="12 Months">12 Months</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="pkgFeatures">Features (comma separated)</label>
+                    <input id="pkgFeatures" name="features" type="text" placeholder="Unlimited Messages, Advanced Search, ..." />
+                  </div>
+                </div>
+                <div class="form-column">
+                  <div class="form-group">
+                    <label for="pkgStatus">Status</label>
+                    <select id="pkgStatus" name="status" required>
+                      <option value="active">Active</option>
+                      <option value="inactive">Inactive</option>
+                      <option value="draft">Draft</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="pkgDesc">Description</label>
+                <textarea id="pkgDesc" name="description" rows="3" placeholder="Short description..."></textarea>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary"><i class="fas fa-save"></i> Save Package</button>
+                <button type="button" id="cancelAddPackage" class="btn-secondary">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+  <style>
+    /* Hide Button Styles */
+    .hide-btn {
+      background: #f59e0b;
+      color: white;
+      border: none;
+      padding: 0.5rem;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      margin: 0 0.25rem;
+    }
+
+    .hide-btn:hover {
+      background: #d97706;
+      transform: translateY(-1px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .hide-btn:active {
+      transform: translateY(0);
+    }
+
+    /* Action Buttons Container */
+    .action-buttons {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Consistent button sizing */
+    .edit-btn, .hide-btn, .delete-btn {
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.875rem;
+    }
+
+    /* Button tooltips */
+    .edit-btn[title]:hover::after,
+    .hide-btn[title]:hover::after,
+    .delete-btn[title]:hover::after {
+      content: attr(title);
+      position: absolute;
+      background: #374151;
+      color: white;
+      padding: 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      white-space: nowrap;
+      z-index: 1000;
+      margin-top: 40px;
+    }
+  </style>
+  <script src="script.js"></script>
+  <script>
+    // Check authentication on page load
+    document.addEventListener('DOMContentLoaded', function() {
+      const isLoggedIn = localStorage.getItem('isLoggedIn');
+      const userType = localStorage.getItem('userType');
+      const username = localStorage.getItem('username');
+      
+      if (!isLoggedIn) {
+        window.location.href = 'login.html';
+        return;
+      }
+      
+      // Display user info
+      if (username && userType) {
+        console.log(`Welcome ${username} (${userType})`);
+        const userDisplay = document.getElementById('userDisplay');
+        if (userDisplay) {
+          userDisplay.textContent = `${userType.toUpperCase()}`;
+        }
+      }
+      
+      // Force update user info
+      forceUpdateUserInfo();
+
+      const staffLink = document.getElementById('staffLink');
+      if (staffLink && userType !== 'admin') {
+        staffLink.style.display = 'none';
+      }
+
+      // Add Package modal logic
+      const addPackageBtn = document.getElementById('addPackageBtn');
+      const addPackageModal = document.getElementById('addPackageModal');
+      const closeAddPackageModal = document.getElementById('closeAddPackageModal');
+      const cancelAddPackage = document.getElementById('cancelAddPackage');
+      const addPackageForm = document.getElementById('addPackageForm');
+
+      if (addPackageBtn && addPackageModal) {
+        addPackageBtn.addEventListener('click', () => {
+          addPackageModal.style.display = 'block';
+        });
+      }
+
+      if (closeAddPackageModal) {
+        closeAddPackageModal.addEventListener('click', () => {
+          addPackageModal.style.display = 'none';
+        });
+      }
+
+      if (cancelAddPackage) {
+        cancelAddPackage.addEventListener('click', () => {
+          addPackageModal.style.display = 'none';
+        });
+      }
+
+      window.addEventListener('click', (e) => {
+        if (e.target === addPackageModal) {
+          addPackageModal.style.display = 'none';
+        }
+      });
+
+      if (addPackageForm) {
+        addPackageForm.addEventListener('submit', () => {
+          // Global form handler will show notification and reset
+          // Here we just close the modal
+          addPackageModal.style.display = 'none';
+        });
+      }
+    });
+    
+
+  </script>
+</body>
+</html> 

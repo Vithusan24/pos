@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <style>
+        body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .story-card:hover {
+      transform: scale(1.03);
+      transition: 0.3s;
+    }
+    .review-section {
+      background-color: #f8f9fa;
+      padding: 60px 0;
+    }
+    .counter {
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: #ff4d6d;
+    }
+    .modal-img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+
+      .btn a{
+          text-decoration: none;
+          color: black;
+      }
+      .heart {
+  position: absolute;
+  color: red;
+  font-size: 20px;
+  pointer-events: none;
+  animation: floatUp 3s ease-out forwards;
+  opacity: 1;
+  z-index: 9999;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translate(0, 0) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-20px, -200px) scale(1.5);
+    opacity: 0;
+  }
+}
+    
+.nav-link:hover {
+  color: #ffe0f0 !important;
+  text-decoration: underline;
+}
+
+.navbar-brand:hover {
+  color: #fff0f5 !important;
+}
+
+  </style>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap JS (required for toggler to work) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</head>
+<body>
+    <div class="container-fluid bg-black bg-opacity-75 ">
+      <!-- Add this to head for Bootstrap (if not already included) -->
+
+<!-- Fixed top navbar -->
+<nav class="navbar fixed-top" style="background-color: rgb(127, 8, 8);">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="logo.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+    </a>
+    <span style="color: aliceblue;">sample@gmail.com</span>
+
+    <div class="ms-auto d-flex gap-2">
+      <button class="btn bg-primary" style=" align-items: center;"> <a class="nav-link text-white fw-semibold me-3" style="margin-left: 15px; text-decoration: none;"  href="dashboard.html">DashBoard</a></button>
+      <button class="btn bg-secondary" style=" text-align: center;"> <a class="nav-link text-white fw-semibold me-3" style="margin-left: 15px; text-decoration: none;" href="">Log Out</a></button>
+      
+    </div>
+  </div>
+</nav>
+<br><br><br>
+
+<!-- Optional content spacing for fixed nav -->
+<div style="height: 80px;"> 
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg shadow-sm " style="background: linear-gradient(to right, #ec3107, #fda101); border-radius: 10px;">
+  <div class="container-fluid">
+    <!-- Logo -->
+    <a class="navbar-brand text-white fw-bold" href="#">
+      <img src="logo.png" alt="" width="30" height="30" class="d-inline-block align-text-top me-2">
+      TheanNilavu
+    </a>
+
+    <!-- Toggler for mobile -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Navigation Links -->
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link  text-white fw-semibold me-3" href="home.html">Home</a>
+        <a class="nav-link  text-white fw-semibold me-3"  href="members.html">Member Ship</a>
+        <a class="nav-link  text-white fw-semibold me-3"  href="mem.html">Members</a>
+        <a class="nav-link text-white fw-semibold me-3" href="package.html">Packages</a>
+        <a class="nav-link text-white fw-semibold me-3"  href="contact.html">Contact Us</a>
+        <a class="nav-link text-white fw-semibold " style="text-decoration: underline;" href="story.html">Stories</a>
+      </div>
+    </div>
+  </div>
+</nav>
+</div>
+
+<section class="py-5" style="background: linear-gradient(to right, #a37303, #3a011c);">
+  <div class="container">
+    <h2 class="text-center mb-5" style="color: #f8f9fa;">Success Stories</h2>
+    <div class="row g-4">
+      <!-- Story Card -->
+      <div class="col-md-4">
+        <div class="card story-card" data-bs-toggle="modal" data-bs-target="#storyModal1">
+          <img src="img/couple1.jpg" class="card-img-top" alt="Couple Story">
+          <div class="card-body">
+            <h5 class="card-title">Karthik & Meena</h5>
+            <p class="card-text">Found their match in just 3 months through our platform.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card story-card" data-bs-toggle="modal" data-bs-target="#storyModal1">
+          <img src="img/couple1.jpg" class="card-img-top" alt="Couple Story">
+          <div class="card-body">
+            <h5 class="card-title">Karthik & Meena</h5>
+            <p class="card-text">Found their match in just 3 months through our platform.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card story-card" data-bs-toggle="modal" data-bs-target="#storyModal1">
+          <img src="img/couple1.jpg" class="card-img-top" alt="Couple Story">
+          <div class="card-body">
+            <h5 class="card-title">Karthik & Meena</h5>
+            <p class="card-text">Found their match in just 3 months through our platform.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more story cards as needed -->
+    </div>
+  </div>
+</section>
+
+<!-- Modal: Full Story -->
+<div class="modal fade" id="storyModal1" tabindex="-1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Karthik & Meena</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <img src="img/couple1.jpg" class="modal-img mb-3" alt="Couple">
+        <p>We met on TheanNilavu Matrimony and it changed our lives. After a few interactions and family meetings, we knew we were meant to be together.</p>
+        <hr>
+        <h6>📌 Popular Posts</h6>
+        <div class="d-flex gap-3">
+          <div class="card" style="width: 10rem;">
+            <img src="img/couple2.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+              <h6 class="card-title">Asha & Ramesh</h6>
+              <p class="card-text small">Their journey from intro to marriage in 2 months!</p>
+            </div>
+          </div>
+          <div class="card" style="width: 10rem;">
+            <img src="img/couple2.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+              <h6 class="card-title">Asha & Ramesh</h6>
+              <p class="card-text small">Their journey from intro to marriage in 2 months!</p>
+            </div>
+          </div>
+          <div class="card" style="width: 10rem;">
+            <img src="img/couple2.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+              <h6 class="card-title">Asha & Ramesh</h6>
+              <p class="card-text small">Their journey from intro to marriage in 2 months!</p>
+            </div>
+          </div>
+          <div class="card" style="width: 10rem;">
+            <img src="img/couple2.jpg" class="card-img-top" alt="">
+            <div class="card-body">
+              <h6 class="card-title">Asha & Ramesh</h6>
+              <p class="card-text small">Their journey from intro to marriage in 2 months!</p>
+            </div>
+          </div>
+          <!-- Add more popular cards -->
+        </div>
+        <hr>
+        <h6>🕊 Latest Posts</h6>
+        <div class="row g-3">
+          <div class="col-md-6">
+            <div class="card">
+              <img src="img/couple3.jpg" class="card-img-top" alt="">
+              <div class="card-body">
+                <h6 class="card-title">Vijay & Anjali</h6>
+                <p class="card-text">Met during lockdown. A modern fairy tale!</p>
+                <a href="#" class="btn btn-sm btn-outline-primary mt-2">Read Full Story</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img src="img/couple3.jpg" class="card-img-top" alt="">
+              <div class="card-body">
+                <h6 class="card-title">Vijay & Anjali</h6>
+                <p class="card-text">Met during lockdown. A modern fairy tale!</p>
+                <a href="#" class="btn btn-sm btn-outline-primary mt-2">Read Full Story</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img src="img/couple3.jpg" class="card-img-top" alt="">
+              <div class="card-body">
+                <h6 class="card-title">Vijay & Anjali</h6>
+                <p class="card-text">Met during lockdown. A modern fairy tale!</p>
+                <a href="#" class="btn btn-sm btn-outline-primary mt-2">Read Full Story</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card">
+              <img src="img/couple3.jpg" class="card-img-top" alt="">
+              <div class="card-body">
+                <h6 class="card-title">Vijay & Anjali</h6>
+                <p class="card-text">Met during lockdown. A modern fairy tale!</p>
+                <a href="#" class="btn btn-sm btn-outline-primary mt-2">Read Full Story</a>
+              </div>
+            </div>
+          </div>
+          <!-- Add more latest cards -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ 2nd Section: Review / Share Experience -->
+<section class="review-section">
+  <div class="container">
+    <h2 class="text-center mb-5">Share Your Experience</h2>
+    <div class="row">
+      <!-- Form -->
+      <div class="col-md-6">
+        <form>
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="text" class="form-control" placeholder="Your name">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Profession</label>
+            <input type="text" class="form-control" placeholder="E.g. Engineer">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Country</label>
+            <input type="text" class="form-control" placeholder="E.g. Sri Lanka">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" rows="4" placeholder="Your inspiring experience..."></textarea>
+          </div>
+          <div class="mb-3">
+            <label class="form-label d-block">Rating</label>
+            <span class="text-warning fs-4">★★★★★</span>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Add Your Photo</label>
+            <input type="file" class="form-control">
+          </div>
+          <button class="btn btn-success">Submit Review</button>
+        </form>
+      </div>
+    
+      <!-- Image -->
+      <div class="col-md-6 text-center g-2">
+        <img src="img/d81b6668b4cd875545b963b9d8541773.jpg" class="img-fluid rounded" alt="Review" style="height: 700px;">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ✅ 3rd Section: Member Stats -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Our Community</h2>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="counter" id="free">0</div>
+        <p>Free Members</p>
+      </div>
+      <div class="col-md-4">
+        <div class="counter" id="paid">0</div>
+        <p>Paid Members</p>
+      </div>
+      <div class="col-md-4">
+        <div class="counter" id="active">0</div>
+        <p>Active Members</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<footer class="bg-dark text-white pt-4 pb-2 mt-5">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-3 mb-3">
+        <img src="logo.png" alt="" width="30" height="30" class="d-inline-block align-text-top">
+      </div>
+
+      <!-- About -->
+      <div class="col-md-3 mb-3">
+        <h5>About Us</h5>
+        <p>We provide top-notch services to help you achieve your goals with ease and satisfaction.</p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-md-3 mb-3">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none">Home</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Services</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Login</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="col-md-3 mb-3">
+        <h5>Contact</h5>
+        <p>Email: info@example.com</p>
+        <p>Phone: +94 77 123 4567</p>
+        <p>Address: Colombo, Sri Lanka</p>
+      </div>
+
+    </div>
+
+    <!-- Bottom copyright -->
+    <div class="text-center pt-3 border-top mt-3">
+      <small>&copy; 2025 YourCompany. All rights reserved.</small>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Animate counters
+  function animateCounter(id, target) {
+    let count = 0;
+    const speed = 20;
+    const interval = setInterval(() => {
+      if (count < target) {
+        count++;
+        document.getElementById(id).textContent = count;
+      } else {
+        clearInterval(interval);
+      }
+    }, speed);
+  }
+
+  window.onload = function () {
+    animateCounter("free", 1520);
+    animateCounter("paid", 630);
+    animateCounter("active", 978);
+  };
+</script>
+<script>
+  
+  document.addEventListener("mousemove", function(e) {
+  const heart = document.createElement("div");
+  heart.className = "heart";
+  heart.innerHTML = "❤️";
+
+  // Random left/right drift
+  const driftX = Math.random() * 40 - 20; // -20 to +20px
+  const scale = 1 + Math.random(); // Scale 1–2
+  const duration = 2 + Math.random() * 2; // 2–4s duration
+
+  heart.style.left = e.pageX + "px";
+  heart.style.top = e.pageY + "px";
+  heart.style.transform = `translate(0, 0) scale(${scale})`;
+  heart.style.animationDuration = `${duration}s`;
+
+  document.body.appendChild(heart);
+
+  setTimeout(() => {
+    heart.remove();
+  }, duration * 1000);
+});
+
+
+</script>
+ 
+</body>
+</html>
